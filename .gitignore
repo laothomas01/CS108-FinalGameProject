@@ -111,3 +111,9 @@ final-game/Library/SourceAssetDB
 *.log
 *.log
 *.asset
+CS108FinalGameProject/Library/ArtifactDB
+CS108FinalGameProject/Library/PackageManager/ProjectCache
+*.md5
+CS108FinalGameProject/Library/SourceAssetDB
+CS108FinalGameProject/Temp/UnityLockfile
+CS108FinalGameProject/Temp/workerlic
