@@ -3,6 +3,11 @@
 # Unity Version Unity 2020.3.19f1 (64-bit)
 
 # Instructions on the basics of how to use this git hub repository:
+  ## Downloading this repository
+  - Type in the git bash terminal after choosing your current directory: Git clone <repository http>
+  OR
+  - just download the zip and unpack it
+  
   - Main branch: where we will push out the game and our finalized changes. Dont touch branch this unless your work has been finalized. 
   - Your branch: where you will/can be making changes separate to the main branch
   ## Putting changes into branches:
