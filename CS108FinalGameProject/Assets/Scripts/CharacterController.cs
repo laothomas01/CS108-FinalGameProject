@@ -62,7 +62,7 @@ public class CharacterController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             Jump();
         }
@@ -108,7 +108,7 @@ public class CharacterController : MonoBehaviour
     private void OnDrawGizmos()  // note the spelling "Gizmos"
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-            
+
     }
 
 }
