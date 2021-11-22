@@ -13,6 +13,8 @@ public class CharacterController : MonoBehaviour
     private float moveSpeed;
     private float movementInputDirection;
     [SerializeField]
+    private float jumpForce;
+    [SerializeField]
     private float groundCheckRadius;
     Vector2 moveDirection;
     private Vector2 m_Velocity = Vector2.zero;
@@ -21,31 +23,49 @@ public class CharacterController : MonoBehaviour
     //direction character is facing
 
     private bool isFacingRight = true;
-    private bool isGrounded;
-
+    public bool isGrounded;
+    public bool canJump;
 
     public Transform groundCheck;
 
     public LayerMask whatIsGround;
 
-    private void Awake()
+    private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        getPlayerInput();
+        CheckPlayerInput();
         CheckMovementDirection();
+        CheckIfCanJump();
+    }
 
+    private void CheckIfCanJump()
+    {
+        if (isGrounded && rb2d.velocity.y <= 0.01f)
+        {
+            canJump = true;
+        }
+        else
+        {
+            canJump = false;
+        }
     }
     void FixedUpdate()
     {
         Move(horizontalInput);
+        CheckSurroundings();
     }
-    public void getPlayerInput()
+    public void CheckPlayerInput()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
 
     }
     private void Move(float horizontalInput)
@@ -78,9 +98,15 @@ public class CharacterController : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
 
     }
-    private void onDrawGizmos()
+    private void Jump()
     {
-        Gizmos.color = Color.red;
+        if (canJump)
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
+        }
+    }
+    private void OnDrawGizmos()  // note the spelling "Gizmos"
+    {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
 }
