@@ -108,5 +108,7 @@ public class CharacterController : MonoBehaviour
     private void OnDrawGizmos()  // note the spelling "Gizmos"
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+            
     }
+
 }
