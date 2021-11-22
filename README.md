@@ -6,7 +6,7 @@
   ## Downloading this repository
   - Type in the git bash terminal after choosing your current directory: Git clone <repository http>
   OR
-  - just download the zip and unpack it
+  - just download the zip, unpack it, and locate that folder in your GitHub Desktop App
   
   - Main branch: where we will push out the game and our finalized changes. Dont touch branch this unless your work has been finalized. 
   - Your branch: where you will/can be making changes separate to the main branch
