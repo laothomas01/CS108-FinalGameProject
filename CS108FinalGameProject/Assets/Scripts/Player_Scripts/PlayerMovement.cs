@@ -22,30 +22,32 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         // Jump control and animation
-        if(Input.GetButtonDown("Jump")) {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
             jump = true;
             //animator.SetBool("IsJumping", true);
         }
 
-       /*  if (Input.GetButtonDown("Crouch")) {
-            crouch = true;
-        } else if (Input.GetButtonUp("Crouch")) {
-            crouch = false;
-        } */
+        /*  if (Input.GetButtonDown("Crouch")) {
+             crouch = true;
+         } else if (Input.GetButtonUp("Crouch")) {
+             crouch = false;
+         } */
     }
 
-    public void OnLanding () {
+    public void OnLanding()
+    {
         animator.SetBool("IsJumping", false);
     }
 
-  /*   public void OnCrouching (bool isCrouching) {
-        animator.SetBool("IsCrouching", isCrouching);
-    } */
+    /*   public void OnCrouching (bool isCrouching) {
+          animator.SetBool("IsCrouching", isCrouching);
+      } */
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);       
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
 
