@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     void Start()
     {
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.right * speed;
 
     }
 
