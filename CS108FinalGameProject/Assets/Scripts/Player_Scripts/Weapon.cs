@@ -8,13 +8,12 @@ public class Weapon : MonoBehaviour
 
     public GameObject horizontalFirePoint; // used to shoot left or right
     public GameObject verticalFirePoint; //used to shoot up or down
-    public GameObject bulletPrefab;
-    public bool IsAimingUp = false;
-    public bool IsAimingHorizontal = true;
+    public GameObject bulletPrefab; // create bullet objects
+    public bool IsAimingUp = false; // shoot up
+    public bool IsAimingHorizontal = true; // shoot left or right
 
-    void Awake()
+    void Start()
     {
-
 
     }
     void Update()
@@ -27,11 +26,13 @@ public class Weapon : MonoBehaviour
 
             IsAimingUp = true;
             IsAimingHorizontal = false;
+            bulletPrefab.GetComponent<Bullet>().flyVertical = true;
+            bulletPrefab.GetComponent<Bullet>().flyHorizontal = false;
             verticalFirePoint.SetActive(IsAimingUp);
             horizontalFirePoint.SetActive(IsAimingHorizontal);
-            Debug.Log(IsAimingUp);
-            //Bullet b = new Bullet();
-            //b.rb.velocity = b.transform.up * b.speed;
+
+
+            //Debug.Log(bulletPrefab.GetComponent<Bullet>().flyVertical);
             if (Input.GetKeyDown(KeyCode.J))
             {
                 Shoot();
@@ -42,10 +43,12 @@ public class Weapon : MonoBehaviour
         {
             IsAimingUp = false;
             IsAimingHorizontal = true;
+            bulletPrefab.GetComponent<Bullet>().flyVertical = false;
+            bulletPrefab.GetComponent<Bullet>().flyHorizontal = true;
             verticalFirePoint.SetActive(IsAimingUp);
             horizontalFirePoint.SetActive(IsAimingHorizontal);
 
-            Debug.Log(IsAimingHorizontal);
+            //Debug.Log(IsAimingHorizontal);
         }
         else
         {
@@ -63,7 +66,7 @@ public class Weapon : MonoBehaviour
         {
             Instantiate(bulletPrefab, verticalFirePoint.transform.position, verticalFirePoint.transform.rotation);
         }
-        else if (IsAimingHorizontal)
+        if (IsAimingHorizontal)
         {
             Instantiate(bulletPrefab, horizontalFirePoint.transform.position, horizontalFirePoint.transform.rotation);
         }

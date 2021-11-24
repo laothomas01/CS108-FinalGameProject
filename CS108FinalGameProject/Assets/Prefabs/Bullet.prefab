@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2323376462289251700}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,3 +137,5 @@ MonoBehaviour:
   speed: 20
   damage: 40
   rb: {fileID: 8934323735908032817}
+  flyVertical: 0
+  flyHorizontal: 1
