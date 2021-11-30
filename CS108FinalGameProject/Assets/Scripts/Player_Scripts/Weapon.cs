@@ -73,8 +73,9 @@ public class Weapon : MonoBehaviour
     }
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(horizontalFirePoint.transform.position, 1);
-        Gizmos.DrawWireSphere(verticalFirePoint.transform.position, 1);
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawWireSphere(horizontalFirePoint.transform.position, 1);
+        //Gizmos.DrawWireSphere(verticalFirePoint.transform.position, 1);
     }
+    
 }

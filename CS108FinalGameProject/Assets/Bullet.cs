@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public bool flyVertical = false;
     public bool flyHorizontal = true;
     private GameObject weapon;
+    public float lifeTime = 1.0f;
     void Start()
     {
         if (flyVertical)
@@ -24,8 +25,13 @@ public class Bullet : MonoBehaviour
             rb.velocity = transform.right * speed;
         }
 
-
     }
+
+    void Update()
+    {
+        SelfDestroy();
+    }
+
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
@@ -44,6 +50,11 @@ public class Bullet : MonoBehaviour
         Debug.Log("Hello World");
     }
 
+    private void SelfDestroy()
+    {
+        //destroy object after a certain time. 
+        Destroy(gameObject, lifeTime);
+    }
 
 
 }

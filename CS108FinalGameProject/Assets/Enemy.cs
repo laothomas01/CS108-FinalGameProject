@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * 
+ * Enemy must have BoxCollider2D to use this script
+ */
 public class Enemy : MonoBehaviour
 {
 
