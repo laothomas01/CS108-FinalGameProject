@@ -17,6 +17,7 @@ public class CharacterController2D : MonoBehaviour
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+    public bool m_IsMoving = false; //check whether the character is moving. 
     private Vector3 m_Velocity = Vector3.zero;
 
     [Header("Events")]
@@ -63,6 +64,7 @@ public class CharacterController2D : MonoBehaviour
 
     public void Move(float move, bool crouch, bool jump)
     {
+
         // If crouching, check to see if the character can stand up
         if (!crouch)
         {
@@ -123,6 +125,16 @@ public class CharacterController2D : MonoBehaviour
                 // ... flip the player.
                 Flip();
             }
+
+            if (move == 0) // checking if player is moving or not
+            {
+                m_IsMoving = false;
+
+            }
+            else if (move != 0)
+            {
+                m_IsMoving = true;
+            }
         }
         // If the player should jump...
         if (m_Grounded && jump)
@@ -131,6 +143,7 @@ public class CharacterController2D : MonoBehaviour
             m_Grounded = false;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
         }
+
     }
 
 
