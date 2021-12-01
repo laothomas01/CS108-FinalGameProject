@@ -23,23 +23,23 @@ public class CharacterController2D : MonoBehaviour
     [Header("Events")]
     [Space]
 
-    public UnityEvent OnLandEvent;
+    //public UnityEvent OnLandEvent;
 
-    [System.Serializable]
-    public class BoolEvent : UnityEvent<bool> { }
+    //[System.Serializable]
+    //public class BoolEvent : UnityEvent<bool> { }
 
-    public BoolEvent OnCrouchEvent;
+    //public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-        if (OnLandEvent == null)
-            OnLandEvent = new UnityEvent();
+        //if (OnLandEvent == null)
+        //    OnLandEvent = new UnityEvent();
 
-        if (OnCrouchEvent == null)
-            OnCrouchEvent = new BoolEvent();
+        //if (OnCrouchEvent == null)
+        //    OnCrouchEvent = new BoolEvent();
     }
 
     private void FixedUpdate()
@@ -55,8 +55,8 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                if (!wasGrounded)
-                    OnLandEvent.Invoke();
+                //if (!wasGrounded)
+                //OnLandEvent.Invoke();
             }
         }
     }
@@ -85,15 +85,17 @@ public class CharacterController2D : MonoBehaviour
                 if (!m_wasCrouching)
                 {
                     m_wasCrouching = true;
-                    OnCrouchEvent.Invoke(true);
+                    //OnCrouchEvent.Invoke(true);
                 }
 
                 // Reduce the speed by the crouchSpeed multiplier
                 move *= m_CrouchSpeed;
 
+
                 // Disable one of the colliders when crouching
                 if (m_CrouchDisableCollider != null)
                     m_CrouchDisableCollider.enabled = false;
+
             }
             else
             {
@@ -104,7 +106,7 @@ public class CharacterController2D : MonoBehaviour
                 if (m_wasCrouching)
                 {
                     m_wasCrouching = false;
-                    OnCrouchEvent.Invoke(false);
+                    //OnCrouchEvent.Invoke(false);
                 }
             }
 
@@ -135,6 +137,7 @@ public class CharacterController2D : MonoBehaviour
             {
                 m_IsMoving = true;
             }
+
         }
         // If the player should jump...
         if (m_Grounded && jump)

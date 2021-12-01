@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7818779880417270869}
   - component: {fileID: 7818779880417270868}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7818779880417270867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.168886, y: -0.7422778, z: -2.0030236}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   rb: {fileID: 7818779880417270870}
   flyVertical: 0
   flyHorizontal: 1
-  lifeTime: 1
+  lifeTime: 0.5
 --- !u!61 &7818779880417270868
 BoxCollider2D:
   m_ObjectHideFlags: 0

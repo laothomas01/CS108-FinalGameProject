@@ -27,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
             //animator.SetBool("IsJumping", true);
         }
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            crouch = true;
+        }
 
         Debug.Log("MOVING:" + controller.m_IsMoving);
 

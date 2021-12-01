@@ -77,5 +77,5 @@ public class Weapon : MonoBehaviour
         //Gizmos.DrawWireSphere(horizontalFirePoint.transform.position, 1);
         //Gizmos.DrawWireSphere(verticalFirePoint.transform.position, 1);
     }
-    
+
 }
