@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform player;
     [SerializeField] float agroRange;
     [SerializeField] float moveSpeed;
 
     Rigidbody2D rb2d;
     private double ENEMY_SCALE = 1.3;
+    private Vector3 playerPosition;
 
 
     
@@ -23,7 +23,8 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         // distance to player
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
+        playerPosition = GameObject.FindWithTag("Player").transform.position;
+        float distToPlayer = Vector2.Distance(transform.position, playerPosition);
         //print("distToPlayer:" + distToPlayer);
 
         if (distToPlayer < agroRange)
@@ -43,7 +44,7 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         
-        if(transform.position.x < player.position.x)
+        if(transform.position.x < playerPosition.x)
         {
             //enemy is to the left of player, enemy moves right 
             rb2d.velocity = new Vector2(moveSpeed, 0);
