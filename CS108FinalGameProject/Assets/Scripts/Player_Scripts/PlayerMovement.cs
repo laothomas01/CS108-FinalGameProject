@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
             crouch = true;
         }
 
-        Debug.Log("MOVING:" + controller.m_IsMoving);
+        //Debug.Log("MOVING:" + controller.m_IsMoving);
 
         /*  if (Input.GetButtonDown("Crouch")) {
              crouch = true;

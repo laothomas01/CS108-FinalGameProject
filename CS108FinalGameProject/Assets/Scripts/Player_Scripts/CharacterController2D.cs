@@ -133,10 +133,11 @@ public class CharacterController2D : MonoBehaviour
                 m_IsMoving = false;
 
             }
-            else if (move != 0)
+            else
             {
                 m_IsMoving = true;
             }
+
 
         }
         // If the player should jump...
