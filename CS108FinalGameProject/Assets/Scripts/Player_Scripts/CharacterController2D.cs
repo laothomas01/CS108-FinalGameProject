@@ -23,10 +23,10 @@ public class CharacterController2D : MonoBehaviour
     [Header("Events")]
     [Space]
 
-    //public UnityEvent OnLandEvent;
+    public UnityEvent OnLandEvent;
 
     //[System.Serializable]
-    //public class BoolEvent : UnityEvent<bool> { }
+    public class BoolEvent : UnityEvent<bool> { }
 
     //public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
@@ -35,8 +35,8 @@ public class CharacterController2D : MonoBehaviour
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-        //if (OnLandEvent == null)
-        //    OnLandEvent = new UnityEvent();
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
 
         //if (OnCrouchEvent == null)
         //    OnCrouchEvent = new BoolEvent();
@@ -55,8 +55,8 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                //if (!wasGrounded)
-                //OnLandEvent.Invoke();
+                if (!wasGrounded)
+                    OnLandEvent.Invoke();
             }
         }
     }
