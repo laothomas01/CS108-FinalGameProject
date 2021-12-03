@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab; // create bullet objects
     public bool IsAimingUp = false; // shoot up
     public bool IsAimingHorizontal = true; // shoot left or right
-
+    public bool isShooting = false; // determine if player is shooting or not. 
     void Start()
     {
 
