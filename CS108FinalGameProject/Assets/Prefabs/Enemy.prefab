@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -179,6 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bfa69385bb53f4682b7134966229e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9042701184765497139, guid: 8ab3545f82aa7474b808a1519bcf3f0d, type: 3}
   agroRange: 10
-  moveSpeed: 3
+  moveSpeed: 5
