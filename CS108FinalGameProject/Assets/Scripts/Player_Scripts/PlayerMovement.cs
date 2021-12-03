@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             jump = true;
-            //animator.SetBool("IsJumping", true);
+            animator.SetBool("IsJumping", true);
         }
         if (Input.GetKey(KeyCode.LeftControl))
         {
