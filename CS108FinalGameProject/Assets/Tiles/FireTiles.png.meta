@@ -1,40 +1,46 @@
 fileFormatVersion: 2
-guid: d60e6facfa79f4e4e9975cc75b802cd8
+guid: 0086269c7baba41b29bff8e95a1e6be4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5082965245545483837
-    second: TilesFirePlanet_2_0
+      213: 1990843888162340337
+    second: FireTiles_0
   - first:
-      213: -656577823923133334
-    second: TilesFirePlanet_2_1
+      213: 2737373906377249726
+    second: FireTiles_1
   - first:
-      213: -5779944562684238274
-    second: TilesFirePlanet_2_2
+      213: 3297176221947075065
+    second: FireTiles_2
   - first:
-      213: 5702441292702690786
-    second: TilesFirePlanet_2_3
+      213: 8225525717353257853
+    second: FireTiles_3
   - first:
-      213: 9036278902602376623
-    second: TilesFirePlanet_2_4
+      213: 7030041025540880394
+    second: FireTiles_4
   - first:
-      213: -8183539088517064287
-    second: TilesFirePlanet_2_5
+      213: 2151560102119090819
+    second: FireTiles_5
   - first:
-      213: -899174583410741522
-    second: TilesFirePlanet_2_6
+      213: -3473989270650495755
+    second: FireTiles_6
   - first:
-      213: 3549870454754583589
-    second: TilesFirePlanet_2_7
+      213: -2996930792940829224
+    second: FireTiles_7
   - first:
-      213: 639393956086263063
-    second: TilesFirePlanet_2_8
+      213: 836493588787648206
+    second: FireTiles_8
   - first:
-      213: 6622166873232097694
-    second: TilesFirePlanet_2_9
+      213: 6915513261399371490
+    second: FireTiles_9
   - first:
-      213: 2188952976617385242
-    second: TilesFirePlanet_2_10
+      213: -2865066029797159941
+    second: FireTiles_10
+  - first:
+      213: -372547650625941501
+    second: FireTiles_11
+  - first:
+      213: 5318025754010773169
+    second: FireTiles_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,35 +126,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilesFirePlanet_2_0
+      name: FireTiles_0
       rect:
         serializedVersion: 2
         x: 2
@@ -162,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c1fa953a0ea579b0800000000000000
-      internalID: -5082965245545483837
+      spriteID: 1fd7c25e7f5e0ab10800000000000000
+      internalID: 1990843888162340337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_1
+      name: FireTiles_1
       rect:
         serializedVersion: 2
         x: 38
@@ -183,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a64a9a5a2fd53e6f0800000000000000
-      internalID: -656577823923133334
+      spriteID: eb31a0b801b1df520800000000000000
+      internalID: 2737373906377249726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_2
+      name: FireTiles_2
       rect:
         serializedVersion: 2
         x: 74
@@ -204,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3661cf2b0389cfa0800000000000000
-      internalID: -5779944562684238274
+      spriteID: 9f9150ffd4ce1cd20800000000000000
+      internalID: 3297176221947075065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_3
+      name: FireTiles_3
       rect:
         serializedVersion: 2
         x: 110
@@ -225,17 +207,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ed20149424232f40800000000000000
-      internalID: 5702441292702690786
+      spriteID: d7b5ea92f00f62270800000000000000
+      internalID: 8225525717353257853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_4
+      name: FireTiles_4
       rect:
         serializedVersion: 2
-        x: 146
+        x: 148
         y: 2
         width: 30
         height: 32
@@ -246,19 +228,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa5a8f029cf476d70800000000000000
-      internalID: 9036278902602376623
+      spriteID: a0879c3e019bf8160800000000000000
+      internalID: 7030041025540880394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_5
+      name: FireTiles_5
       rect:
         serializedVersion: 2
-        x: 182
+        x: 184
         y: 2
-        width: 32
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -267,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a99a67ae8a3e6e80800000000000000
-      internalID: -8183539088517064287
+      spriteID: 38a26bf6380ebdd10800000000000000
+      internalID: 2151560102119090819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_6
+      name: FireTiles_6
       rect:
         serializedVersion: 2
         x: 218
         y: 2
         width: 32
-        height: 6
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,19 +270,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eee2ebcfa7d7583f0800000000000000
-      internalID: -899174583410741522
+      spriteID: 5fcdb511a29e9cfc0800000000000000
+      internalID: -3473989270650495755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_7
+      name: FireTiles_7
       rect:
         serializedVersion: 2
         x: 254
         y: 2
         width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5055e7253c866d0800000000000000
+      internalID: -2996930792940829224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireTiles_8
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2
+        width: 32
         height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -309,41 +312,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5242d4ede5ca34130800000000000000
-      internalID: 3549870454754583589
+      spriteID: ec65490bc72db9b00800000000000000
+      internalID: 836493588787648206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_8
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 2
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71dad085a659fd800800000000000000
-      internalID: 639393956086263063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TilesFirePlanet_2_9
+      name: FireTiles_9
       rect:
         serializedVersion: 2
         x: 326
         y: 2
         width: 32
-        height: 32
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e91cb5a7fa9a6eb50800000000000000
-      internalID: 6622166873232097694
+      spriteID: 2ee6639dba6d8ff50800000000000000
+      internalID: 6915513261399371490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesFirePlanet_2_10
+      name: FireTiles_10
       rect:
         serializedVersion: 2
         x: 362
@@ -372,8 +354,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1d20597229b06e10800000000000000
-      internalID: 2188952976617385242
+      spriteID: bfbc6eb20ad3d38d0800000000000000
+      internalID: -2865066029797159941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireTiles_11
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300d886b2e174daf0800000000000000
+      internalID: -372547650625941501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireTiles_12
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 2
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6e0364f3c6dc940800000000000000
+      internalID: 5318025754010773169
       vertices: []
       indices: 
       edges: []
@@ -381,7 +405,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e435876142ec5904ca0b02cec660caca
+    spriteID: 8254cf223cc074794b64f08772f8b71a
     internalID: 0
     vertices: []
     indices: 
