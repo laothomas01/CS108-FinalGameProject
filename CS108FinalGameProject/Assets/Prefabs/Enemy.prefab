@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3464449191172942223}
   - component: {fileID: 3464449191172942218}
   - component: {fileID: 5852903723513882189}
+  - component: {fileID: 1373886351}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -134,7 +135,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3464449191172942219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -181,3 +182,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agroRange: 10
   moveSpeed: 5
+--- !u!58 &1373886351
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3464449191172942219}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03, y: -0.09}
+  serializedVersion: 2
+  m_Radius: 0.71
