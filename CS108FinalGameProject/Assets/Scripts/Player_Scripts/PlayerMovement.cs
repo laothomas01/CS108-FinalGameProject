@@ -24,23 +24,13 @@ public class PlayerMovement : MonoBehaviour
         // Jump control and animation
         if (Input.GetKeyDown(KeyCode.K))
         {
-            if (controller.m_Grounded != false)
-            {
-                jump = true;
-                animator.SetBool("IsJumping", true);
-            }
-            else
-            {
-                jump = false;
-                animator.SetBool("IsJumping", false);
-            }
-
-
+            jump = true;
+            animator.SetBool("IsJumping", true);
         }
-        /*  if (Input.GetKey(KeyCode.LeftControl))
-         {
-             crouch = true;
-         } */
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            crouch = true;
+        }
 
         //Debug.Log("MOVING:" + controller.m_IsMoving);
 
