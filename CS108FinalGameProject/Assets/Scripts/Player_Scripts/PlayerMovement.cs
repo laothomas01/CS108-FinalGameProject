@@ -22,25 +22,25 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         // Jump control and animation
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            if (controller.m_Grounded != false) 
+            if (controller.m_Grounded != false)
             {
                 jump = true;
                 animator.SetBool("IsJumping", true);
             }
             else
             {
-                 jump = false;
+                jump = false;
                 animator.SetBool("IsJumping", false);
             }
-           
+
 
         }
-       /*  if (Input.GetKey(KeyCode.LeftControl))
-        {
-            crouch = true;
-        } */
+        /*  if (Input.GetKey(KeyCode.LeftControl))
+         {
+             crouch = true;
+         } */
 
         //Debug.Log("MOVING:" + controller.m_IsMoving);
 

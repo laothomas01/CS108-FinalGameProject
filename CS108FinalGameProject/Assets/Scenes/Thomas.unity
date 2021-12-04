@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5135103307389681284, guid: e609ca2f2e131984793dcc28ce9f929d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e609ca2f2e131984793dcc28ce9f929d, type: 3}
 --- !u!1 &302875867
@@ -347,7 +351,7 @@ Transform:
   m_LocalScale: {x: 59.702576, y: 0.5389, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1507262895
 GameObject:
@@ -447,7 +451,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1507262900
 MonoBehaviour:
@@ -565,6 +569,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 2876671454185131490}
   m_CeilingCheck: {fileID: 2876671455087418625}
   m_CrouchDisableCollider: {fileID: 0}
+  m_Grounded: 0
   m_IsMoving: 0
   OnLandEvent:
     m_PersistentCalls:
@@ -632,7 +637,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 3.2}
+    oldSize: {x: 2.56, y: 3.44}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -656,7 +661,7 @@ Transform:
   - {fileID: 2876671455087418625}
   - {fileID: 1902228749}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2876671454896807845
 SpriteRenderer:
@@ -795,7 +800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5135103307389681284, guid: e609ca2f2e131984793dcc28ce9f929d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5135103307389681284, guid: e609ca2f2e131984793dcc28ce9f929d, type: 3}
       propertyPath: m_LocalPosition.x
