@@ -37,6 +37,7 @@ public class Weapon : MonoBehaviour
             if (this.GetComponentInParent<PlayerMovement>().horizontalMove > 0 || this.GetComponentInParent<PlayerMovement>().horizontalMove < 0)
             {
                 cc2d.animator.SetBool("Is_Vertical_Move_Shooting", true);
+                cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", false);
                 isVerticalMoveShooting = true;
                 if (Input.GetKeyDown(KeyCode.J))
                 {
