@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
     public bool IsAimingHorizontal = true; // shoot left or right
     public bool isIdleShooting = false;
     public bool isHorizontalMoveShooting = false;
-
+    public bool isVerticalMoveShooting = false;
     CharacterController2D cc2d;
     void Start()
     {
@@ -33,18 +33,31 @@ public class Weapon : MonoBehaviour
             bulletPrefab.GetComponent<Bullet>().flyHorizontal = false;
             verticalFirePoint.SetActive(IsAimingUp);
             horizontalFirePoint.SetActive(IsAimingHorizontal);
-
-
-            //Debug.Log(bulletPrefab.GetComponent<Bullet>().flyVertical);
-            if (Input.GetKeyDown(KeyCode.J))
+            cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", true);
+            if (this.GetComponentInParent<PlayerMovement>().horizontalMove > 0 || this.GetComponentInParent<PlayerMovement>().horizontalMove < 0)
             {
-                if (cc2d.m_IsMoving)
+                cc2d.animator.SetBool("Is_Vertical_Move_Shooting", true);
+                isVerticalMoveShooting = true;
+                if (Input.GetKeyDown(KeyCode.J))
                 {
-                    Debug.Log("Shooting Up While Moving " + cc2d.m_IsMoving);
+                    if (isVerticalMoveShooting)
+                    {
+                        Shoot();
+                    }
                 }
-                Debug.Log("Shooting Up While Not Moving " + cc2d.m_IsMoving);
 
             }
+            else if (this.GetComponentInParent<PlayerMovement>().horizontalMove == 0)
+            {
+                cc2d.animator.SetBool("Is_Vertical_Move_Shooting", false);
+                cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", true);
+                if (Input.GetKeyDown(KeyCode.J))
+                {
+                    Shoot();
+                }
+            }
+
+
 
         }
         else if (Input.GetKeyUp(KeyCode.W))
@@ -55,9 +68,11 @@ public class Weapon : MonoBehaviour
             bulletPrefab.GetComponent<Bullet>().flyHorizontal = true;
             verticalFirePoint.SetActive(IsAimingUp);
             horizontalFirePoint.SetActive(IsAimingHorizontal);
-
+            cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", false);
+            cc2d.animator.SetBool("Is_Vertical_Move_Shooting", false);
             //Debug.Log(IsAimingHorizontal);
         }
+
         else
         {
             if (Input.GetKeyDown(KeyCode.J))
@@ -98,6 +113,7 @@ public class Weapon : MonoBehaviour
             {
                 cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", false);
                 cc2d.animator.SetBool("Is_Horizontal_Move_Shooting", false);
+
             }
 
 
