@@ -11,10 +11,13 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefab; // create bullet objects
     public bool IsAimingUp = false; // shoot up
     public bool IsAimingHorizontal = true; // shoot left or right
-    public bool isShooting = false; // determine if player is shooting or not. 
+    public bool isIdleShooting = false;
+    public bool isHorizontalMoveShooting = false;
+
+    CharacterController2D cc2d;
     void Start()
     {
-
+        cc2d = this.GetComponentInParent<CharacterController2D>();
     }
     void Update()
     {
@@ -35,7 +38,12 @@ public class Weapon : MonoBehaviour
             //Debug.Log(bulletPrefab.GetComponent<Bullet>().flyVertical);
             if (Input.GetKeyDown(KeyCode.J))
             {
-                Shoot();
+                if (cc2d.m_IsMoving)
+                {
+                    Debug.Log("Shooting Up While Moving " + cc2d.m_IsMoving);
+                }
+                Debug.Log("Shooting Up While Not Moving " + cc2d.m_IsMoving);
+
             }
 
         }
@@ -54,8 +62,41 @@ public class Weapon : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                Shoot();
+                if (this.GetComponentInParent<PlayerMovement>().horizontalMove == 0)
+                {
+                    isIdleShooting = true;
+                    isHorizontalMoveShooting = false;
+                    if (isIdleShooting)
+                    {
+                        cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", true);
+                    }
+
+                }
+                else
+                {
+                    isIdleShooting = false;
+                    isHorizontalMoveShooting = true;
+                    cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", false);
+                }
+
+                //if (cc2d.m_IsMoving)
+                //{
+                //    //Debug.Log("Shooting Horizontal While Moving " + cc2d.m_IsMoving);
+
+                //}
+
+                //Debug.Log("Shooting Horizontal While Not Moving " + cc2d.m_IsMoving);
+
             }
+            else if (Input.GetKeyUp(KeyCode.J))
+            {
+                cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", false);
+            }
+
+
+
+
+
         }
 
 
@@ -70,6 +111,10 @@ public class Weapon : MonoBehaviour
         {
             Instantiate(bulletPrefab, horizontalFirePoint.transform.position, horizontalFirePoint.transform.rotation);
         }
+    }
+    void StoppedIdleShooting()
+    {
+
     }
     void OnDrawGizmos()
     {
