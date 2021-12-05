@@ -69,6 +69,7 @@ public class Weapon : MonoBehaviour
                     if (isIdleShooting)
                     {
                         cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", true);
+                        Shoot();
                     }
 
                 }
@@ -76,7 +77,12 @@ public class Weapon : MonoBehaviour
                 {
                     isIdleShooting = false;
                     isHorizontalMoveShooting = true;
-                    cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", false);
+                    if (isHorizontalMoveShooting)
+                    {
+                        cc2d.animator.SetBool("Is_Horizontal_Move_Shooting", true);
+                        Shoot();
+                    }
+                    //cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", false);
                 }
 
                 //if (cc2d.m_IsMoving)
@@ -91,6 +97,7 @@ public class Weapon : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.J))
             {
                 cc2d.animator.SetBool("Is_Horizontal_Idle_Shooting", false);
+                cc2d.animator.SetBool("Is_Horizontal_Move_Shooting", false);
             }
 
 
