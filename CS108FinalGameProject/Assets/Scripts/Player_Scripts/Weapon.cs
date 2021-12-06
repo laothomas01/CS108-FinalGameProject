@@ -27,36 +27,36 @@ public class Weapon : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
 
-            IsAimingUp = true;
-            IsAimingHorizontal = false;
-            bulletPrefab.GetComponent<Bullet>().flyVertical = true;
-            bulletPrefab.GetComponent<Bullet>().flyHorizontal = false;
-            verticalFirePoint.SetActive(IsAimingUp);
-            horizontalFirePoint.SetActive(IsAimingHorizontal);
-            cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", true);
-            if (this.GetComponentInParent<PlayerMovement>().horizontalMove > 0 || this.GetComponentInParent<PlayerMovement>().horizontalMove < 0)
-            {
-                cc2d.animator.SetBool("Is_Vertical_Move_Shooting", true);
-                cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", false);
-                isVerticalMoveShooting = true;
-                if (Input.GetKeyDown(KeyCode.J))
-                {
-                    if (isVerticalMoveShooting)
-                    {
-                        Shoot();
-                    }
-                }
+            //IsAimingUp = true;
+            //IsAimingHorizontal = false;
+            //bulletPrefab.GetComponent<Bullet>().flyVertical = true;
+            //bulletPrefab.GetComponent<Bullet>().flyHorizontal = false;
+            //verticalFirePoint.SetActive(IsAimingUp);
+            //horizontalFirePoint.SetActive(IsAimingHorizontal);
+            //cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", true);
+            //if (this.GetComponentInParent<PlayerMovement>().horizontalMove > 0 || this.GetComponentInParent<PlayerMovement>().horizontalMove < 0)
+            //{
+            //    cc2d.animator.SetBool("Is_Vertical_Move_Shooting", true);
+            //    cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", false);
+            //    isVerticalMoveShooting = true;
+            //    if (Input.GetKeyDown(KeyCode.J))
+            //    {
+            //        if (isVerticalMoveShooting)
+            //        {
+            //            Shoot();
+            //        }
+            //    }
 
-            }
-            else if (this.GetComponentInParent<PlayerMovement>().horizontalMove == 0)
-            {
-                cc2d.animator.SetBool("Is_Vertical_Move_Shooting", false);
-                cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", true);
-                if (Input.GetKeyDown(KeyCode.J))
-                {
-                    Shoot();
-                }
-            }
+            //}
+            //else if (this.GetComponentInParent<PlayerMovement>().horizontalMove == 0)
+            //{
+            //    cc2d.animator.SetBool("Is_Vertical_Move_Shooting", false);
+            //    cc2d.animator.SetBool("Is_Vertical_Idle_Shooting", true);
+            //    if (Input.GetKeyDown(KeyCode.J))
+            //    {
+            //        Shoot();
+            //    }
+            //}
 
 
 
