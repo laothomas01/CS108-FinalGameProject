@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6926f71e91570e343ab589c18f81cf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 9042701184765497139, guid: 8ab3545f82aa7474b808a1519bcf3f0d, type: 3}
   offset: {x: -0.68, y: 2.96, z: -12}
   smoothFactor: 3.76
 --- !u!114 &7506700252460835507
@@ -112,4 +112,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fea985036dff364482c25375d733047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 9042701184765497136, guid: 8ab3545f82aa7474b808a1519bcf3f0d, type: 3}

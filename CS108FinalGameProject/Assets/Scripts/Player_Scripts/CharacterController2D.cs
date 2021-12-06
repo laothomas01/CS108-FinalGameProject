@@ -11,9 +11,9 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
     [SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
-
+    public Animator animator;
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded;            // Whether or not the player is grounded.
+    public bool m_Grounded;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -23,10 +23,10 @@ public class CharacterController2D : MonoBehaviour
     [Header("Events")]
     [Space]
 
-    //public UnityEvent OnLandEvent;
+    public UnityEvent OnLandEvent;
 
     //[System.Serializable]
-    //public class BoolEvent : UnityEvent<bool> { }
+    public class BoolEvent : UnityEvent<bool> { }
 
     //public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
@@ -35,8 +35,8 @@ public class CharacterController2D : MonoBehaviour
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-        //if (OnLandEvent == null)
-        //    OnLandEvent = new UnityEvent();
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
 
         //if (OnCrouchEvent == null)
         //    OnCrouchEvent = new BoolEvent();
@@ -55,8 +55,8 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                //if (!wasGrounded)
-                //OnLandEvent.Invoke();
+                if (!wasGrounded)
+                    OnLandEvent.Invoke();
             }
         }
     }
@@ -127,16 +127,17 @@ public class CharacterController2D : MonoBehaviour
                 // ... flip the player.
                 Flip();
             }
-
-            if (move == 0) // checking if player is moving or not
+            if (move == 0)
             {
                 m_IsMoving = false;
+                //Debug.Log("NOT MOVING:" + move);
+            }
+            //Debug.Log("MOVING:" + move);
+            m_IsMoving = true;
 
-            }
-            else if (move != 0)
-            {
-                m_IsMoving = true;
-            }
+
+
+
 
         }
         // If the player should jump...
