@@ -9,6 +9,18 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Ll]ibrary/APIUpdater/
+/[Ll]ibrary/Artifacts/
+/[Ll]ibrary/BuildPlayerData/
+/[Ll]ibrary/PackageCache/
+/[Ll]ibrary/PackageManager/
+/[Ll]ibrary/PlayerDataCache/
+/[Ll]ibrary/ScriptAssemblies/
+/[Ll]ibrary/ShaderCache/
+/[Ll]ibrary/StateCache/
+/[Ll]ibrary/TempArtifacts/
+/[Ll]ibrary/UIElements/
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -69,3 +81,45 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+*.log
+*.log
+final-game/Temp/UnityLockfile
+final-game/Temp/workerlic
+*.log
+*.json
+final-game/Library/ArtifactDB
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe2.log
+final-game/Library/ArtifactDB
+final-game/Library/SourceAssetDB
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe1.log
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe2.log
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe3.log
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe4.log
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe5.log
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe6.log
+final-game/Logs/shadercompiler-UnityShaderCompiler.exe7.log
+*.dwlt
+*.dwlt
+final-game/Library/SourceAssetDB
+*.log
+*.log
+*.log
+*.log
+*.log
+*.log
+*.log
+*.log
+*.asset
+CS108FinalGameProject/Library/ArtifactDB
+CS108FinalGameProject/Library/PackageManager/ProjectCache
+*.md5
+CS108FinalGameProject/Library/SourceAssetDB
+CS108FinalGameProject/Temp/UnityLockfile
+CS108FinalGameProject/Temp/workerlic
+*.dll
+*.dll
+*.dll
+*.dll
+*.dll
+*.dll

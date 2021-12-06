@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
-    public int damage = 1;
+    public int damage = 40;
     public Rigidbody2D rb;
     public bool flyVertical = false;
     public bool flyHorizontal = true;
