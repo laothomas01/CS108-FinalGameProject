@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel();
+        }
     }
 
     // take damage when colliding on objects with "Enemies"
@@ -80,7 +83,13 @@ public class Player : MonoBehaviour
 
         /** Die animation */
         //animator.SetBool("IsDead", true);
+
+
+        animator.SetTrigger("PlayerDead");
         GetComponent<PlayerMovement>().enabled = false;
+        this.GetComponentInChildren<Weapon>().enabled = false;
+
+       
 
         //when player dies, instantiate a player death animation object. 
 
