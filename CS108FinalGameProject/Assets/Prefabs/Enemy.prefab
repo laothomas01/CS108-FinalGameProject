@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   deathEffect: {fileID: 0}
+  animator: {fileID: 3464449191172942217}
 --- !u!114 &5852903723513882189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agroRange: 10
   moveSpeed: 5
+  animator: {fileID: 3464449191172942217}
 --- !u!58 &1373886351
 CircleCollider2D:
   m_ObjectHideFlags: 0
