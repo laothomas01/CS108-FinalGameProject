@@ -48,15 +48,15 @@ public class Player : MonoBehaviour
             if (isInvincible) return;
             TakeDamage(2);
         }
-        //else if (collision.gameObject.CompareTag("void"))
-        //{
-        //    TakeDamage(100);
-        //}
-        //else if (collision.gameObject.CompareTag("trap"))
-        //{
-        //    TakeDamage(10);
-        //    if (isInvincible) return;
-        //}
+        else if (collision.gameObject.CompareTag("void"))
+        {
+            TakeDamage(10);
+        }
+        else if (collision.gameObject.CompareTag("trap"))
+        {
+            TakeDamage(1);
+            if (isInvincible) return;
+        }
     }
 
     void TakeDamage(int damage)
@@ -94,10 +94,11 @@ public class Player : MonoBehaviour
         //when player dies, instantiate a player death animation object. 
 
         /** Disable the enemy*/
-        //GetComponent<BoxCollider2D>().enabled = false;                 // removes the collider of enemy
-        //GetComponent<CircleCollider2D>().enabled = false;
-        //GetComponent<SpriteRenderer>().enabled = false;             // removes the rendered sprite
-        //this.enabled = false;                                       // disables this script
+        GetComponent<BoxCollider2D>().enabled = false;                 // removes the collider of enemy
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;             // removes the rendered sprite
+        this.enabled = false;                                       // disables this script
+        RestartLevel();
 
     }
 
