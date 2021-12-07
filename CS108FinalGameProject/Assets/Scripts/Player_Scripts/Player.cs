@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
         GetComponent<CircleCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;             // removes the rendered sprite
         this.enabled = false;                                       // disables this script
-        RestartLevel();
+        RestartLevel(); 
 
     }
 
