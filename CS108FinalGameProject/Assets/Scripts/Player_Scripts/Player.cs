@@ -87,18 +87,13 @@ public class Player : MonoBehaviour
 
         animator.SetTrigger("PlayerDead");
         GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<CharacterController2D>().enabled = false;
         this.GetComponentInChildren<Weapon>().enabled = false;
 
-       
+
 
         //when player dies, instantiate a player death animation object. 
 
-        /** Disable the enemy*/
-        GetComponent<BoxCollider2D>().enabled = false;                 // removes the collider of enemy
-        GetComponent<CircleCollider2D>().enabled = false;
-        GetComponent<SpriteRenderer>().enabled = false;             // removes the rendered sprite
-        this.enabled = false;                                       // disables this script
-        RestartLevel(); 
 
     }
 

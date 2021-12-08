@@ -1,21 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * 
- * Enemy must have BoxCollider2D to use this script
- */
-public class Enemy : MonoBehaviour
-{
 
+public class Boss : MonoBehaviour
+{
     [SerializeField] private float iFramesDuration;
     private bool isInvincible = false;
-    public int health = 100;
+    public int health = 10;
     //public GameObject deathEffect; //implement later
     public Animator animator;
-
-
-
 
     public void TakeDamage(int damage)
     {
@@ -32,8 +25,6 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-
-
     void Die()
     {
         //Debug.Log("Enemy Died!");
@@ -44,7 +35,6 @@ public class Enemy : MonoBehaviour
 
         StartCoroutine(DeleteObject());                 // Destroys enemy object after a fixed amount of time.
     }
-
     // Suspends time inbetween invulnerability frames.
     public IEnumerator Invunerability()
     {
@@ -60,15 +50,12 @@ public class Enemy : MonoBehaviour
         //Debug.Log("enemy no longer invincible!");
 
     }
-
-
     // Destroys a game object after a given amount of time.
     public IEnumerator DeleteObject()
     {
-        yield return new WaitForSeconds(0.70f);     // Waits 0.7 of a second.
+        yield return new WaitForSeconds(0.5f);     // Waits 0.7 of a second.
         Destroy(gameObject);
     }
-
 
 
 
