@@ -59,11 +59,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
 
         currentHealth -= damage;
         animator.SetTrigger("Hurt");
+
         //healthBar.SetHealth(currentHealth);
 
         if (!isInvincible)

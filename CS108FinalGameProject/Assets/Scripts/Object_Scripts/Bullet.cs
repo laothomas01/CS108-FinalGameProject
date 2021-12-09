@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public bool flyVertical = false;
     public bool flyHorizontal = true;
-    private GameObject weapon;
+
     public float lifeTime = 1.0f;
     void Start()
     {
@@ -36,9 +36,29 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponent<Enemy>();
+        Boss boss = hitInfo.GetComponent<Boss>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
+
+            if (enemy.health == 0)
+            {
+                return;
+            }
+            else
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
+        if (boss != null)
+        {
+            if (boss.health == 0)
+            {
+                return;
+            }
+            else
+            {
+                boss.TakeDamage(damage);
+            }
         }
 
         //put code here later:

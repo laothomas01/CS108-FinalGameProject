@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+
     [SerializeField] private float iFramesDuration;
     private bool isInvincible = false;
-    public int health = 10;
+    public int health = 20;
     //public GameObject deathEffect; //implement later
     public Animator animator;
 
@@ -20,21 +21,25 @@ public class Boss : MonoBehaviour
         {
             StartCoroutine(Invunerability());
         }
-        if (health <= 0)
+        if (health == 0)
         {
+
+
+
             Die();
         }
     }
+
+
     void Die()
     {
         //Debug.Log("Enemy Died!");
         animator.SetBool("isDead", true);                // Animator component to set death animation to true.
 
-        GetComponent<EnemyAI>().enabled = false;        // Disables Enemy AI and movement
         Physics2D.IgnoreLayerCollision(8, 9, true);      // Collision of dying enemy is ignored.
-
         StartCoroutine(DeleteObject());                 // Destroys enemy object after a fixed amount of time.
     }
+
     // Suspends time inbetween invulnerability frames.
     public IEnumerator Invunerability()
     {
@@ -50,13 +55,14 @@ public class Boss : MonoBehaviour
         //Debug.Log("enemy no longer invincible!");
 
     }
+
+
     // Destroys a game object after a given amount of time.
     public IEnumerator DeleteObject()
     {
-        yield return new WaitForSeconds(0.5f);     // Waits 0.7 of a second.
+        yield return new WaitForSeconds(3.0f);     // Waits 0.7 of a second.
         Destroy(gameObject);
     }
-
 
 
 

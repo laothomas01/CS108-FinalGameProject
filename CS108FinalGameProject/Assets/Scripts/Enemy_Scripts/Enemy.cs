@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour
         isInvincible = true;
         Physics2D.IgnoreLayerCollision(8, 9, true);      // Removes collision properties for enemy to mimick invulnerability.
 
+
         yield return new WaitForSeconds(iFramesDuration);
 
         Physics2D.IgnoreLayerCollision(8, 9, false);     // Restores collision properties for enemy.
