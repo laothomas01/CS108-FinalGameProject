@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<CharacterController2D>().enabled = false;
         this.GetComponentInChildren<Weapon>().enabled = false;
-        
+
         LevelManager.instance.GameOver();
         //gameObject.SetActive(false);
 
