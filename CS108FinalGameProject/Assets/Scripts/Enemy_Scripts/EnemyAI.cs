@@ -13,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     private double ENEMY_SCALE = 1.3;
     private Vector3 playerPosition;
     public Animator animator;
+    public Player player;
 
 
     // Start is called before the first frame update
@@ -25,20 +26,32 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         // distance to player
-        playerPosition = GameObject.FindWithTag("Player").transform.position;
-        float distToPlayer = Vector2.Distance(transform.position, playerPosition);
-        //print("distToPlayer:" + distToPlayer);
+        if (player.isPlayerDead != true) {
 
-        if (distToPlayer < agroRange)
-        {
-            //code to chase player
-            ChasePlayer();
+            playerPosition = GameObject.FindWithTag("Player").transform.position;
+            float distToPlayer = Vector2.Distance(transform.position, playerPosition);
+            //print("distToPlayer:" + distToPlayer);
+
+            if (distToPlayer < agroRange)
+            {
+                //code to chase player
+                ChasePlayer();
+            }
+         /*    else if (player.isPlayerDead == true) {
+                StopChasingPlayer();
+            } */
+            else
+            {
+                //code to stop chasing player
+                StopChasingPlayer();
+            }
+
+            
         }
-        else
-        {
-            //code to stop chasing player
-            StopChasingPlayer();
-        }
+        
+        
+
+
 
 
     }
@@ -65,7 +78,7 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    private void StopChasingPlayer()
+    public void StopChasingPlayer()
     {
         rb2d.velocity = new Vector2(0, 0);
         animator.SetFloat("Speed", Mathf.Abs(0));

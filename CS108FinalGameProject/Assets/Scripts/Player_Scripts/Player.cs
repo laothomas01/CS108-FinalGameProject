@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public HealthBar healthBar;
+
     public int maxHealth = 10;
     public int currentHealth;
+    public bool isPlayerDead = false;
 
     //public HealthBar healthBar;
     Animator animator;
 
-    [Header("iFrames")]
+    //[Header("iFrames")]
     //[SerializeField] public float iFramesDuration;
     private bool isInvincible = false;
     //[SerializeField] public int numberOfFlashes;
@@ -23,7 +26,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
 
         animator = GetComponent<Animator>();
         //spriteRend = GetComponent<SpriteRenderer>();
@@ -65,7 +68,7 @@ public class Player : MonoBehaviour
         currentHealth -= damage;
         animator.SetTrigger("Hurt");
 
-        //healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
 
         if (!isInvincible)
         {
@@ -75,6 +78,7 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            isPlayerDead = true;
         }
     }
 
@@ -90,6 +94,9 @@ public class Player : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<CharacterController2D>().enabled = false;
         this.GetComponentInChildren<Weapon>().enabled = false;
+        
+        LevelManager.instance.GameOver();
+        //gameObject.SetActive(false);
 
 
 
