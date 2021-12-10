@@ -10,10 +10,17 @@ public class SmoothCameraFollow : MonoBehaviour
     //used to fix the position of the camera?
     public Vector3 offset;
     //how fast the camera will move to the player
+    public bool cameraZoomOut = false;
     [Range(0, 10)] public float smoothFactor;
+    
     void FixedUpdate()
     {
         Follow();
+        if (cameraZoomOut)
+        {
+            offset.z = -20;
+        }
+
     }
     void Follow()
     {
