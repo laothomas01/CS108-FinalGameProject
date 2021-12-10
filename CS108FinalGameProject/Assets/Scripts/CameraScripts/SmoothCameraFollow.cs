@@ -12,7 +12,7 @@ public class SmoothCameraFollow : MonoBehaviour
     //how fast the camera will move to the player
     public bool cameraZoomOut = false;
     [Range(0, 10)] public float smoothFactor;
-    
+
     void FixedUpdate()
     {
         Follow();
