@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("enemy hits player");
             if (isInvincible) return;
-            TakeDamage(2);
+            TakeDamage(1);
         }
         else if (collision.gameObject.CompareTag("void"))
         {
