@@ -7,10 +7,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float agroRange;
     [SerializeField] float moveSpeed;
 
+    //float horizontalMove = 0f;
+
     Rigidbody2D rb2d;
     private double ENEMY_SCALE = 1.3;
     private Vector3 playerPosition;
-
+    public Animator animator;
+    public Player player;
 
 
     // Start is called before the first frame update
@@ -23,20 +26,32 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         // distance to player
-        playerPosition = GameObject.FindWithTag("Player").transform.position;
-        float distToPlayer = Vector2.Distance(transform.position, playerPosition);
-        //print("distToPlayer:" + distToPlayer);
+        if (player.isPlayerDead != true) {
 
-        if (distToPlayer < agroRange)
-        {
-            //code to chase player
-            ChasePlayer();
+            playerPosition = GameObject.FindWithTag("Player").transform.position;
+            float distToPlayer = Vector2.Distance(transform.position, playerPosition);
+            //print("distToPlayer:" + distToPlayer);
+
+            if (distToPlayer < agroRange)
+            {
+                //code to chase player
+                ChasePlayer();
+            }
+         /*    else if (player.isPlayerDead == true) {
+                StopChasingPlayer();
+            } */
+            else
+            {
+                //code to stop chasing player
+                StopChasingPlayer();
+            }
+
+            
         }
-        else
-        {
-            //code to stop chasing player
-            StopChasingPlayer();
-        }
+        
+        
+
+
 
 
     }
@@ -44,10 +59,12 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
 
+
         if (transform.position.x < playerPosition.x)
         {
             //enemy is to the left of player, enemy moves right 
             rb2d.velocity = new Vector2(moveSpeed, 0);
+            animator.SetFloat("Speed", Mathf.Abs(moveSpeed));
 
             // flips the enemy sprite to 
             transform.localScale = new Vector2((float)-(ENEMY_SCALE), (float)ENEMY_SCALE);
@@ -55,14 +72,16 @@ public class EnemyAI : MonoBehaviour
         else
         {
             rb2d.velocity = new Vector2(-moveSpeed, 0);
+            animator.SetFloat("Speed", Mathf.Abs(-moveSpeed));
             transform.localScale = new Vector2((float)ENEMY_SCALE, (float)ENEMY_SCALE);
         }
 
     }
 
-    private void StopChasingPlayer()
+    public void StopChasingPlayer()
     {
         rb2d.velocity = new Vector2(0, 0);
+        animator.SetFloat("Speed", Mathf.Abs(0));
     }
     void OnDrawGizmos()
     {

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 40
+  damage: 1
   rb: {fileID: 7818779880417270870}
   flyVertical: 0
   flyHorizontal: 1

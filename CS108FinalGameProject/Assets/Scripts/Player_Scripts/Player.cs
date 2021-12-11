@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public HealthBar healthBar;
+
     public int maxHealth = 10;
     public int currentHealth;
+    public bool isPlayerDead = false;
 
     //public HealthBar healthBar;
     Animator animator;
 
-    [Header("iFrames")]
+    //[Header("iFrames")]
     //[SerializeField] public float iFramesDuration;
     private bool isInvincible = false;
     //[SerializeField] public int numberOfFlashes;
@@ -23,7 +26,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
 
         animator = GetComponent<Animator>();
         //spriteRend = GetComponent<SpriteRenderer>();
@@ -32,7 +35,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel();
+        }
     }
 
     // take damage when colliding on objects with "Enemies"
@@ -45,23 +51,24 @@ public class Player : MonoBehaviour
             if (isInvincible) return;
             TakeDamage(2);
         }
-        //else if (collision.gameObject.CompareTag("void"))
-        //{
-        //    TakeDamage(100);
-        //}
-        //else if (collision.gameObject.CompareTag("trap"))
-        //{
-        //    TakeDamage(10);
-        //    if (isInvincible) return;
-        //}
+        else if (collision.gameObject.CompareTag("void"))
+        {
+            TakeDamage(10);
+        }
+        else if (collision.gameObject.CompareTag("trap"))
+        {
+            TakeDamage(1);
+            if (isInvincible) return;
+        }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
 
         currentHealth -= damage;
         animator.SetTrigger("Hurt");
-        //healthBar.SetHealth(currentHealth);
+
+        healthBar.SetHealth(currentHealth);
 
         if (!isInvincible)
         {
@@ -71,6 +78,7 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            isPlayerDead = true;
         }
     }
 
@@ -80,15 +88,20 @@ public class Player : MonoBehaviour
 
         /** Die animation */
         //animator.SetBool("IsDead", true);
+
+
+        animator.SetTrigger("PlayerDead");
         GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<CharacterController2D>().enabled = false;
+        this.GetComponentInChildren<Weapon>().enabled = false;
+
+        LevelManager.instance.GameOver();
+        //gameObject.SetActive(false);
+
+
 
         //when player dies, instantiate a player death animation object. 
 
-        /** Disable the enemy*/
-        //GetComponent<BoxCollider2D>().enabled = false;                 // removes the collider of enemy
-        //GetComponent<CircleCollider2D>().enabled = false;
-        //GetComponent<SpriteRenderer>().enabled = false;             // removes the rendered sprite
-        //this.enabled = false;                                       // disables this script
 
     }
 
