@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: 1112067b0963f304a9b19068432dc5b4
   - enabled: 1
-    path: Assets/Scenes/Ralph.unity
-    guid: aa6e051edeb11e84fa4f0bfd8f8973e6
+    path: Assets/Scenes/Thomas.unity
+    guid: eedc6b0d3db05354f9b0ee8522e465e3
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729

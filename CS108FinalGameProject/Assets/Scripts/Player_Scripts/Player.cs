@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+
 
         animator = GetComponent<Animator>();
         //spriteRend = GetComponent<SpriteRenderer>();
