@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 1102695270}
     - target: {fileID: 5889364392929455836, guid: 383467aca9e48ca47b60deaa1a7b1d61, type: 3}
       propertyPath: maxHealth
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 383467aca9e48ca47b60deaa1a7b1d61, type: 3}
@@ -317,6 +317,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1483231143537230608, guid: 1f0e65cbe82b9d047a8e2a471713c8f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483231143537230609, guid: 1f0e65cbe82b9d047a8e2a471713c8f1, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483231143537230611, guid: 1f0e65cbe82b9d047a8e2a471713c8f1, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1448706083}
     - target: {fileID: 7506700252460835496, guid: 1f0e65cbe82b9d047a8e2a471713c8f1, type: 3}
       propertyPath: m_Name
       value: MainCamera
