@@ -8,6 +8,7 @@ TagManager:
   - void
   - Enemy
   - Boss
+  - SpawnBoss
   layers:
   - Default
   - TransparentFX
