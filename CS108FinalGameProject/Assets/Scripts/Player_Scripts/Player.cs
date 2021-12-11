@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     public HealthBar healthBar;
 
+
     public int maxHealth = 10;
     public int currentHealth;
     public bool isPlayerDead = false;
@@ -57,9 +58,10 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("trap"))
         {
-            TakeDamage(1);
+            TakeDamage(3);
             if (isInvincible) return;
         }
+        
     }
 
     public void TakeDamage(int damage)
@@ -95,7 +97,9 @@ public class Player : MonoBehaviour
         GetComponent<CharacterController2D>().enabled = false;
         this.GetComponentInChildren<Weapon>().enabled = false;
 
-        LevelManager.instance.GameOver();
+        isPlayerDead = true;
+        //LevelManager.instance.GameOver();
+        //healthBar.gameObject.SetActive(false);
         //gameObject.SetActive(false);
 
 

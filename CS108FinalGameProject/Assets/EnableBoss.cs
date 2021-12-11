@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class EnableBoss : MonoBehaviour
 {
-    public GameObject setBossActive;
+    public GameObject setBossActive; //boss. i should rename it something else
     public GameObject cam;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        setBossActive.SetActive(true);
-        SmoothCameraFollow scf = cam.GetComponent<SmoothCameraFollow>();
-        scf.cameraZoomOut = true;
-        Destroy(gameObject);
+
+        //Debug.Log(scf.cameraZoomOut);
+        if (collision.gameObject.tag == "Player")
+        {
+            cam.GetComponent<SmoothCameraFollow>().cameraZoomOut = true;
+            setBossActive.SetActive(true);
+        }
+
+        if (setBossActive.GetComponent<Boss>().isDead == true)
+        {
+            cam.GetComponent<SmoothCameraFollow>().cameraZoomOut = false;
+            Destroy(gameObject);
+        }
+
+
     }
 }
