@@ -44,6 +44,10 @@ public class EnemyShoot : MonoBehaviour
         {
             shootingTime = Time.time + fireRate / 1000;
             Instantiate(bulletPrefab, horizontalFirePoint.transform.position, horizontalFirePoint.transform.rotation);
+            if (this.GetComponentInParent<Boss>().health == 10)
+            {
+                shootingTime = Time.time + fireRate * 2 / 1000;
+            }
         }
 
     }

@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         //Debug.Log("Enemy Died!");
-        //animator.SetBool("isDead", true);                // Animator component to set death animation to true.
+        animator.SetBool("isDead", true);                // Animator component to set death animation to true.
 
         GetComponent<EnemyAI>().enabled = false;        // Disables Enemy AI and movement
         Physics2D.IgnoreLayerCollision(8, 9, true);      // Collision of dying enemy is ignored.

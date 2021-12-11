@@ -39,30 +39,30 @@ public class EnemyAI : MonoBehaviour
             Patrol();
         }
 
-        if (player.isPlayerDead != true)
-        {
+        //if (player.isPlayerDead != true)
+        //{
 
-            playerPosition = GameObject.FindWithTag("Player").transform.position;
-            float distToPlayer = Vector2.Distance(transform.position, playerPosition);
-            //print("distToPlayer:" + distToPlayer);
+        //    playerPosition = GameObject.FindWithTag("Player").transform.position;
+        //    float distToPlayer = Vector2.Distance(transform.position, playerPosition);
+        //    //print("distToPlayer:" + distToPlayer);
 
-            if (distToPlayer < agroRange)
-            {
-                //code to chase player
-                StopPatrol = true;
-                ChasePlayer();
-            }
-            /*    else if (player.isPlayerDead == true) {
-                   StopChasingPlayer();
-               } */
-            else
-            {
-                //code to stop chasing player
-                StopChasingPlayer();
-            }
+        //    if (distToPlayer < agroRange)
+        //    {
+        //        //code to chase player
+        //        StopPatrol = true;
+        //        ChasePlayer();
+        //    }
+        //    /*    else if (player.isPlayerDead == true) {
+        //           StopChasingPlayer();
+        //       } */
+        //    else
+        //    {
+        //        //code to stop chasing player
+        //        StopChasingPlayer();
+        //    }
 
 
-        }
+        //}
 
 
 
