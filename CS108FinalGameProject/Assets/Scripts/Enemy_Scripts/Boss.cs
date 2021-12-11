@@ -10,6 +10,7 @@ public class Boss : MonoBehaviour
     public int health = 20;
     //public GameObject deathEffect; //implement later
     public Animator animator;
+    public bool isDead = false;
 
     public void TakeDamage(int damage)
     {
@@ -34,6 +35,7 @@ public class Boss : MonoBehaviour
     void Die()
     {
         //Debug.Log("Enemy Died!");
+        isDead = true;
         animator.SetBool("isDead", true);                // Animator component to set death animation to true.
 
         Physics2D.IgnoreLayerCollision(8, 9, true);      // Collision of dying enemy is ignored.

@@ -58,9 +58,10 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("trap"))
         {
-            TakeDamage(1);
+            TakeDamage(3);
             if (isInvincible) return;
         }
+        
     }
 
     public void TakeDamage(int damage)

@@ -12,14 +12,35 @@ public class SmoothCameraFollow : MonoBehaviour
     //how fast the camera will move to the player
     public bool cameraZoomOut = false;
     [Range(0, 10)] public float smoothFactor;
+    private void Update()
+    {
 
+        Debug.Log(cameraZoomOut);
+        if (cameraZoomOut == true)
+        {
+            offset.x = 15.02f;
+            offset.z = -16.27f;
+        }
+        else
+        {
+            offset.x = 1.06f;
+            offset.z = -11.9f;
+        }
+        //if (cameraZoomOut == true)
+        //{
+        //    offset.x = 15.02f;
+        //    offset.z = -16.27f;
+        //}
+        //else
+        //{
+        //    offset.x = 1.06f;
+        //    offset.z = -11.93f;
+        //}
+    }
     void FixedUpdate()
     {
         Follow();
-        if (cameraZoomOut)
-        {
-            offset.z = -20;
-        }
+
 
     }
     void Follow()

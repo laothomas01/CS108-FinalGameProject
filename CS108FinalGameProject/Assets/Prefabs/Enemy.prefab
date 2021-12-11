@@ -139,9 +139,7 @@ MonoBehaviour:
   animator: {fileID: 8896768701082645456}
   player: {fileID: 5889364392929455836, guid: 383467aca9e48ca47b60deaa1a7b1d61, type: 3}
   initWait: 2
-  points:
-  - {x: 10.75, y: -3.92}
-  - {x: 1.07, y: -3.92}
+  points: []
   points2: []
 --- !u!61 &5432354696294268528
 BoxCollider2D:

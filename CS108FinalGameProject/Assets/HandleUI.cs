@@ -5,7 +5,8 @@ using UnityEngine;
 public class HandleUI : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameOverScreen gos;
+    //public GameOverScreen gos;
+    public GameObject gos;
     public Player p;
     void Start()
     {
@@ -18,7 +19,8 @@ public class HandleUI : MonoBehaviour
         if (p.isPlayerDead)
         {
             p.healthBar.gameObject.SetActive(false);
-            gos.gameObject.SetActive(true);
+            gos.SetActive(true);
+
         }
     }
 }
