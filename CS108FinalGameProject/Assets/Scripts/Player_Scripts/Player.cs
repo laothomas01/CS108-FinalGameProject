@@ -48,9 +48,9 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("enemy hits player");
+            //Debug.Log("enemy hits player");
             if (isInvincible) return;
-            TakeDamage(1);
+            TakeDamage(2);
         }
         else if (collision.gameObject.CompareTag("void"))
         {
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             TakeDamage(3);
             if (isInvincible) return;
         }
-        
+
     }
 
     public void TakeDamage(int damage)

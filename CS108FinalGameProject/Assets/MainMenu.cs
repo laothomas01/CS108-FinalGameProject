@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     void Update() {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            Application.LoadLevel("Ralph"); // change scene name 
+            Application.LoadLevel("Level1"); // change scene name 
         }
     }
 }

@@ -15,7 +15,7 @@ public class SmoothCameraFollow : MonoBehaviour
     private void Update()
     {
 
-        Debug.Log(cameraZoomOut);
+        //Debug.Log(cameraZoomOut);
         if (cameraZoomOut == true)
         {
             offset.x = 15.02f;

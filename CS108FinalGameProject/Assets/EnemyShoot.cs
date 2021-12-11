@@ -14,7 +14,7 @@ public class EnemyShoot : MonoBehaviour
     //public Transform player;
     public GameObject horizontalFirePoint;
     public GameObject bulletPrefab;
-    bool beingHandled = false;
+
     public float waitTime;
 
     private void Start()
