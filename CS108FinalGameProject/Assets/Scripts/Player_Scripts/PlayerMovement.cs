@@ -7,12 +7,9 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D controller;
 
-
-
     public float horizontalMove = 0f;
     public float runSpeed = 40f;
     bool jump = false;
-    bool crouch = false;
     int jumpClickCount = 0;
     // Start is called before the first frame update
     void Update()
@@ -39,10 +36,6 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            crouch = true;
-        }
 
 
     }
@@ -53,14 +46,11 @@ public class PlayerMovement : MonoBehaviour
         controller.animator.SetBool("IsJumping", false);
     }
 
-    /*   public void OnCrouching (bool isCrouching) {
-          animator.SetBool("IsCrouching", isCrouching);
-      } */
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
     }
 

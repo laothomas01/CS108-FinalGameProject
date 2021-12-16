@@ -5807,11 +5807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4584225773408303656, guid: 52c5957081468d1408f69a514eae678e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1379023
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 4584225773408303656, guid: 52c5957081468d1408f69a514eae678e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -116.80763
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 4584225773408303656, guid: 52c5957081468d1408f69a514eae678e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7009,7 +7009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 5889364391877591729}
   horizontalMove: 0
-  runSpeed: 75
+  runSpeed: 40
 --- !u!114 &5889364391877591729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7022,16 +7022,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771d6f8518529164ba079dfdcbbfc038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
-  m_CrouchSpeed: 0.36
+  m_JumpForce: 1000
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1079
   m_GroundCheck: {fileID: 5889364392572981491}
-  m_CeilingCheck: {fileID: 5889364391730495504}
-  m_CrouchDisableCollider: {fileID: 0}
   animator: {fileID: 5889364391877591731}
   m_Grounded: 0
   m_IsMoving: 0
@@ -7201,7 +7198,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5.5
   m_Material: {fileID: 6200000, guid: d5cb0c41364286a41a9a0c47bfa313f1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
