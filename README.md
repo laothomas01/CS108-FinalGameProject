@@ -11,4 +11,7 @@
  
  <img src="https://img.itch.zone/aW1hZ2UvMTMwNzkyMC83ODk2NDAzLnBuZw==/original/movKHp.png" width="50%">
 
+# Demo link
+https://flyingpigknuckle.itch.io/cyan
+
 # Release Version: 1.0
